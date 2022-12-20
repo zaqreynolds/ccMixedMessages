@@ -1,6 +1,7 @@
 #Martian Weather Generator
-=================================================
+___
 
-##It does what it says.  
+##This script gives a randomized weather forecast for various locations across the Martian landscape.  
 
-###### Another line for effort.`
+###### Created by Zaq Reynolds 2022.
+v1.0
