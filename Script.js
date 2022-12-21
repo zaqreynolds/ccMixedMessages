@@ -1,4 +1,4 @@
-const location = [
+const locations = [
   "Olympus Mons",
   "Tharsis",
   "Valles Marineris",
@@ -19,13 +19,18 @@ const location = [
   "Melas",
 ];
 
-const locate = location[Math.floor(Math.random() * location.length)];
+const randLocate = locations[Math.floor(Math.random() * locations.length)];
 
-const today =  new Date().toISOString().slice(0, 10);
+const today = new Date().toLocaleDateString("en-us", {
+  weekday: "long",
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+});
 
-const highs = Math.floor(Math.random() * 70);
+const randHighs = Math.floor(Math.random() * 70);
 
-const lows = Math.floor(Math.random() * -220);
+const randLows = Math.floor(Math.random() * -220);
 
 const allWeather = [
   "clear skies",
@@ -38,11 +43,12 @@ const allWeather = [
   "localized clouds",
 ];
 
-const weather = allWeather[Math.floor(Math.random()) * location.length];
+const weather = allWeather[Math.floor(Math.random()) * allWeather.length];
 
-const runMe = () => {
-  console.log(`Good-day fellow Martians. As of ${today} we are expecting ${weather} highs of ${highs} degrees Fahrenheit, 
-    with evening lows dropping down to ${lows} in ${locate}.`);
+const greeting = () => {
+  console.log(
+    `Good-day fellow Martians. It is now ${today} and we are expecting ${weather} highs of ${randHighs} degrees Fahrenheit, with evening lows dropping down to ${randLows} degrees Fahrenheit in ${randLocate}.`
+  );
 };
 
-runMe();
+greeting();
